@@ -7,8 +7,8 @@ VOLUME ["/data"]
 RUN apt-get update && apt-get upgrade -y && apt-get install -y less openjdk-7-jre-headless net-tools vim-tiny sudo openssh-server iputils-ping python2.7
 
 # Install Hadoop
-ADD http://mirror.sdunix.com/apache/hadoop/common/hadoop-1.2.1/hadoop_1.2.1-1_x86_64.deb /root/
-RUN dpkg -i /root/hadoop_1.2.1-1_x86_64.deb && rm /root/hadoop_1.2.1-1_x86_64.deb
+ADD hadoop_1.2.1-1_x86_64.deb /root/
+RUN dpkg -i /root/hadoop_1.2.1-1_x86_64.deb
 
 # Docker messes up /etc/hosts and adds two entries for 127.0.0.1
 # we try to recover from that by giving /etc/resolv.conf and therefore
