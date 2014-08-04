@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [[ "$USER" != "root" ]]; then
-    echo "please run as: sudo $0"
-    exit 1
-fi
-
 image_list=( "apache-hadoop-hdfs" "dnsmasq" "spark-master" "spark-worker" "spark-shell" "shark-master" "shark-worker" "shark-shell" )
 
 IMAGE_PREFIX="commonera/"
