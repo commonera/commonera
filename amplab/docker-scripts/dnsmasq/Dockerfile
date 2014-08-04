@@ -2,7 +2,7 @@ FROM ubuntu:utopic
 
 VOLUME [ "/etc/dnsmasq.d" ]
 
-RUN apt-get install -y dnsmasq-base
+RUN apt-get update && apt-get install -y dnsmasq-base dnsmasq-utils
 
 RUN echo "user=root" > /etc/dnsmasq.conf
 RUN echo "listen-address=__LOCAL_IP__" >> /etc/dnsmasq.conf
