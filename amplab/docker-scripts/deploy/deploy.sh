@@ -3,9 +3,9 @@
 DEBUG=0
 BASEDIR=$(cd $(dirname $0); pwd)
 
-spark_images=( "amplab/spark:0.9.0" "amplab/spark:0.9.1" "amplab/spark:1.0.0")
-shark_images=( "amplab/shark:0.8.0" )
-NAMESERVER_IMAGE="amplab/dnsmasq"
+spark_images=( "commonera/spark:0.9.0" "commonera/spark:0.9.1" "commonera/spark:1.0.0")
+shark_images=( "commonera/shark:0.8.0" )
+NAMESERVER_IMAGE="commonera/dnsmasq"
 
 start_shell=0
 VOLUME_MAP=""

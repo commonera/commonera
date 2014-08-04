@@ -1,4 +1,4 @@
-FROM amplab/shark-base:0.7.0
+FROM commonera/shark-base:0.7.0
 
 #RUN apt-get install -y libcurl4-openssl-dev
 RUN apt-get install -y libcurl3

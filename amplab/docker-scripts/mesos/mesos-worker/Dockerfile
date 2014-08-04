@@ -1,5 +1,5 @@
 # Mesos
-FROM amplab/mesos-base:0.13.0
+FROM commonera/mesos-base:0.13.0
 
 # Setup a volume for data
 #VOLUME ["/data"]

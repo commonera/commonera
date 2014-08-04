@@ -16,7 +16,7 @@ Mac.
 
 Note: the earlier version of the scripts had problems with newer
 versions of Docker (0.7). If you encounter issues please pull the
-latest changes from https://github.com/amplab/docker-scripts.git
+latest changes from https://github.com/commonera/docker-scripts.git
 master branch.
 
 ## Tips for running on Mac OS
@@ -48,7 +48,7 @@ for example the scripts come in the cloned git repository (see below).
 
 First clone the repository:
 
-	$ git clone https://github.com/amplab/docker-scripts.git
+	$ git clone https://github.com/commonera/docker-scripts.git
 
 This repository contains deploy scripts and the sources for the Docker
 image files, which can be easily modified. The main deploy script
@@ -59,8 +59,8 @@ $ sudo ./deploy/deploy.sh
 usage: ./deploy.sh -i &lt;image&gt; [-w &lt;&#35;workers&gt;] [-v &lt;data_directory&gt;] [-c]
 
   image:    spark or shark image from:
-                 amplab/spark:0.9.0  amplab/spark:0.9.1  amplab/spark:1.0.0
-                 amplab/shark:0.8.0
+                 commonera/spark:0.9.0  commonera/spark:0.9.1  commonera/spark:1.0.0
+                 commonera/shark:0.8.0
 </pre>
 
 The script either starts a standalone Spark cluster or a standalone
@@ -99,7 +99,7 @@ Starting from the directory in which the repository was cloned do
 
 #### Deploy the cluster
 
-	$ sudo ./deploy/deploy.sh -i amplab/spark:0.9.0 -w 3
+	$ sudo ./deploy/deploy.sh -i commonera/spark:0.9.0 -w 3
 
 #### Wait a few seconds
 
@@ -108,7 +108,7 @@ the container images the first time but after that the process is fairly quick.
 When the cluster comes up you should see something like this:
 
 <pre>
-> sudo ./deploy.sh -i amplab/spark:0.9.0 -w 3
+> sudo ./deploy.sh -i commonera/spark:0.9.0 -w 3
 *** Starting Spark 0.9.0 ***
 starting nameserver container
 started nameserver container:  069557913d98a37caf43f8238dfdf181aea5ab30eb42e382db83307e277cfa9e
@@ -129,7 +129,7 @@ started worker container:  3cdf681f7c99c1e19f7b580ac911e139923e9caca943fd006fb63
 waiting for workers to register .....
 
 ***********************************************************************
-start shell via:            sudo /home/andre/docker-scripts/deploy/start_shell.sh -i amplab/spark-shell:0.9.0 -n 069557913d98a37caf43f8238dfdf181aea5ab30eb42e382db83307e277cfa9e
+start shell via:            sudo /home/andre/docker-scripts/deploy/start_shell.sh -i commonera/spark-shell:0.9.0 -n 069557913d98a37caf43f8238dfdf181aea5ab30eb42e382db83307e277cfa9e
 
 visit Spark WebUI at:       http://172.17.0.9:8080/
 visit Hadoop Namenode at:   http://172.17.0.9:50070
@@ -146,7 +146,7 @@ nameserver 172.17.0.8
 
 #### Start the Spark shell container as shown above, for example:
 
-	$ sudo /home/andre/docker-scripts/deploy/start_shell.sh -i amplab/spark-shell:0.9.0 -n 069557913d98a37caf43f8
+	$ sudo /home/andre/docker-scripts/deploy/start_shell.sh -i commonera/spark-shell:0.9.0 -n 069557913d98a37caf43f8
 
 The parameter passed with -n is the ID of the nameserver container.
 Then attach to the running shell via the given command, for example:
@@ -176,7 +176,7 @@ Basically the same steps apply only that the Shark images are chosen instead of 
 
 #### Deploy the cluster
 
-	$ sudo ./deploy/deploy.sh -i amplab/shark:0.8.0 -w 3
+	$ sudo ./deploy/deploy.sh -i commonera/shark:0.8.0 -w 3
 
 #### Wait a few seconds
 
@@ -205,7 +205,7 @@ started worker container:  26823e188a2a5a5897ed4b9bf0fca711dc7f98674fe62eb78fb49
 waiting for workers to register .......
 
 ***********************************************************************
-start shell via:            sudo /home/andre/docker-scripts/deploy/start_shell.sh -i amplab/shark-shell:0.8.0 -n 952d22e085c3b74e829e006ab536d45d31800c463832e43d8679bbf3d703940e
+start shell via:            sudo /home/andre/docker-scripts/deploy/start_shell.sh -i commonera/shark-shell:0.8.0 -n 952d22e085c3b74e829e006ab536d45d31800c463832e43d8679bbf3d703940e
 
 visit Spark WebUI at:       http://172.17.0.14:8080/
 visit Hadoop Namenode at:   http://172.17.0.14:50070
@@ -222,7 +222,7 @@ nameserver 172.17.0.13
 
 #### Start the Shark shell container as shown above, for example:
 
-	$ sudo /home/andre/docker-scripts/deploy/start_shell.sh -i amplab/shark-shell:0.8.0 -n 952d22e085c3b74e829e00
+	$ sudo /home/andre/docker-scripts/deploy/start_shell.sh -i commonera/shark-shell:0.8.0 -n 952d22e085c3b74e829e00
 
 The parameter passed with -n is the ID of the nameserver container.
 Then attach to the running shell via the given command, for example:

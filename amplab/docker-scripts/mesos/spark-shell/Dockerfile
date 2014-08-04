@@ -1,5 +1,5 @@
 # Spark
-FROM amplab/mesos-base:0.13.0
+FROM commonera/mesos-base:0.13.0
 
 ADD files /root/spark_shell_files
 

@@ -7,7 +7,7 @@ fi
 
 image_list=("spark-master:0.9.0" "spark-worker:0.9.0" "spark-shell:0.9.0" "shark-master:0.8.0" "shark-worker:0.8.0" "shark-shell:0.8.0" )
 
-IMAGE_PREFIX="amplab/"
+IMAGE_PREFIX="commonera/"
 
 # NOTE: the order matters but this is the right one
 for i in ${image_list[@]}; do

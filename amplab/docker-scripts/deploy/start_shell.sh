@@ -14,8 +14,8 @@ image_type="?"
 DEBUG=1
 
 # TODO: remove redundant image list definition (source from file common to deploy.sh)
-spark_shell_images=( "amplab/spark-shell:0.9.0" "amplab/spark-shell:0.9.1" "amplab/spark-shell:1.0.0")
-shark_shell_images=( "amplab/shark-shell:0.8.0" )
+spark_shell_images=( "commonera/spark-shell:0.9.0" "commonera/spark-shell:0.9.1" "commonera/spark-shell:1.0.0")
+shark_shell_images=( "commonera/shark-shell:0.8.0" )
 
 # TODO: unify with deploy.sh
 function check_root() {
@@ -54,7 +54,7 @@ function parse_options() {
                 image_type="shark"
             fi
             image_name=$(echo "$OPTARG" | awk -F ":" '{print $1}')
-            image_version=$(echo "$OPTARG" | awk -F ":" '{print $2}') 
+            image_version=$(echo "$OPTARG" | awk -F ":" '{print $2}')
           ;;
         h)
             print_help
@@ -181,4 +181,3 @@ echo ""
 echo "***************************************************************"
 echo "connect to shell via:"
 echo "sudo docker attach $SHELL_ID"
-

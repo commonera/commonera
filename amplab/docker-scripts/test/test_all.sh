@@ -8,8 +8,8 @@ fi
 BASEDIR=$(cd $(dirname $0); pwd)"/.."
 service_list=("spark:0.9.0" "shark:0.8.0" "spark:0.8.0" "spark:0.7.3" "shark:0.7.0" )
 
-IMAGE_PREFIX=""
-#"amplab/"
+IMAGE_PREFIX="commonera/"
+#"commonera/"
 
 START=$(date)
 echo "starting tests at $START" > tests.log
@@ -21,20 +21,20 @@ check_screen_session_alive() {
     screen -q -ls > /dev/null
     if (( $? < 10 )); then
         SCREEN_ALIVE=1
-    fi 
+    fi
 }
 
 function wait_for_prompt() {
     service=$1
     OUTFILE=$2
     SCREEN_ALIVE=0
-    
+
     if [[ "$service" == "spark" ]]; then
         query_string="scala>\s$"
     else
         query_string="^shark>\s$\|\s\s\s\s\s>\s$"
     fi
-    
+
     tail -n 1 $OUTFILE | tr -d $'\r' | grep "$query_string" > /dev/null
     STOP="$?"
     until [[ "$STOP" == "0" ]]; do
