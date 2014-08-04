@@ -5,7 +5,7 @@ if [[ "$USER" != "root" ]]; then
     exit 1
 fi
 
-image_list=( "apache-hadoop-hdfs-precise" "dnsmasq-precise" "spark-master" "spark-worker" "spark-shell" "shark-master" "shark-worker" "shark-shell" )
+image_list=( "apache-hadoop-hdfs" "dnsmasq" "spark-master" "spark-worker" "spark-shell" "shark-master" "shark-worker" "shark-shell" )
 
 IMAGE_PREFIX="amplab/"
 

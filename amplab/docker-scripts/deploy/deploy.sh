@@ -5,7 +5,7 @@ BASEDIR=$(cd $(dirname $0); pwd)
 
 spark_images=( "amplab/spark:0.9.0" "amplab/spark:0.9.1" "amplab/spark:1.0.0")
 shark_images=( "amplab/shark:0.8.0" )
-NAMESERVER_IMAGE="amplab/dnsmasq-precise"
+NAMESERVER_IMAGE="amplab/dnsmasq"
 
 start_shell=0
 VOLUME_MAP=""
@@ -53,7 +53,7 @@ function parse_options() {
                 image_type="shark"
             fi
 	    image_name=$(echo "$OPTARG" | awk -F ":" '{print $1}')
-            image_version=$(echo "$OPTARG" | awk -F ":" '{print $2}') 
+            image_version=$(echo "$OPTARG" | awk -F ":" '{print $2}')
           ;;
         w)
             NUM_WORKERS=$OPTARG

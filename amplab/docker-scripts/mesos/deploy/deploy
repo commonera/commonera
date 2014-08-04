@@ -11,7 +11,7 @@ if [[ "$USER" != "root" ]]; then
    exit 1
 fi
 
-source ../../dnsmasq-precise/deploy/start_nameserver.sh
+source ../../dnsmasq/deploy/start_nameserver.sh
 source start_mesos_cluster.sh
 
 echo "*** Starting Mesos $MESOS_VERSION ***"
@@ -22,4 +22,3 @@ sleep 40
 start_mesos_workers
 sleep 3
 print_cluster_info
-

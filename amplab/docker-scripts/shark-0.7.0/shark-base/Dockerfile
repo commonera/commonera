@@ -3,7 +3,6 @@
 #
 # Use spark-base as base
 FROM spark-base:0.7.3
-MAINTAINER amplab amp-docker@eecs.berkeley.edu
 
 # note: SPARK_VERSION should be inherited from spark-base
 # but for some reason isn't (?)
@@ -18,4 +17,3 @@ RUN rm /shark-${SHARK_VERSION}-hadoop1-bin.tgz
 
 # Add Shark config files and configure script
 ADD files /root/shark_files
-

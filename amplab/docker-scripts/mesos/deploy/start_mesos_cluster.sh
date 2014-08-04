@@ -37,7 +37,7 @@ function print_cluster_info() {
     echo "start Spark Shell:          sudo docker run -i -t -dns $NAMESERVER_IP -h spark-client spark-shell-mesos:0.7.3 $MASTER_IP"
     echo "start Shark Shell:          sudo docker run -i -t -dns $NAMESERVER_IP -h shark-client shark-shell-mesos:0.7.0 $MASTER_IP"
     echo ""
-    echo "ssh into master via:        ssh -i ../../apache-hadoop-hdfs-precise/files/id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@${MASTER_IP}"
+    echo "ssh into master via:        ssh -i ../../apache-hadoop-hdfs/files/id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@${MASTER_IP}"
     echo ""
     echo "kill cluster via:           docker/kill_all"
     echo "***********************************************************************"
@@ -45,4 +45,3 @@ function print_cluster_info() {
     echo "to enable cluster name resolution add the following line to _the top_ of your host's /etc/resolv.conf:"
     echo "nameserver $NAMESERVER_IP"
 }
-

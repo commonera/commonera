@@ -55,7 +55,7 @@ function print_cluster_info() {
     echo ""
     echo "visit Spark WebUI at:       http://$MASTER_IP:8080/"
     echo "visit Hadoop Namenode at:   http://$MASTER_IP:50070"
-    echo "ssh into master via:        ssh -i $BASEDIR/apache-hadoop-hdfs-precise/files/id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@${MASTER_IP}"
+    echo "ssh into master via:        ssh -i $BASEDIR/apache-hadoop-hdfs/files/id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@${MASTER_IP}"
     echo ""
     echo "/data mapped:               $VOLUME_MAP"
     echo ""
@@ -67,7 +67,7 @@ function print_cluster_info() {
 }
 
 function get_num_registered_workers() {
-    if [[ "$SPARK_VERSION" == "0.7.3" ]]; then 
+    if [[ "$SPARK_VERSION" == "0.7.3" ]]; then
         DATA=$( curl --noproxy -s http://$MASTER_IP:8080/?format=json | tr -d '\n' | sed s/\"/\\\\\"/g)
     else
 	# Docker on Mac uses tinycore Linux with busybox which has a limited version wget (?)

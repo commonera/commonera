@@ -1,7 +1,4 @@
-# Base Ubuntu Precise 12.04 LTS image
-#
 FROM amplab/shark-base:0.7.0
-MAINTAINER amplab amp-docker@eecs.berkeley.edu
 
 #RUN apt-get install -y libcurl4-openssl-dev
 RUN apt-get install -y libcurl3
@@ -16,4 +13,3 @@ RUN apt-get install -y libcurl3
 ADD files /root/mesos_files
 
 RUN (mv /root/mesos_files/mesos.tgz / && cd / && gunzip < mesos.tgz)|(cd /opt && tar -xvf -) && (rm /mesos.tgz && ln -s /opt/mesos /tmp/mesos)
-

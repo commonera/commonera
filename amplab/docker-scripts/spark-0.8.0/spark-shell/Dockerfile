@@ -1,6 +1,5 @@
 # Spark
 FROM spark-base:0.8.0
-MAINTAINER amplab amp-docker@eecs.berkeley.edu
 
 # Instead of using a random port, bind the worker to a specific port
 ENV SPARK_WORKER_PORT 8888
