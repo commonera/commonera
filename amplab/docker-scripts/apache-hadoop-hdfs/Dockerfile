@@ -5,6 +5,7 @@ VOLUME ["/data"]
 
 # install a few other useful packages plus Open Jdk 7
 RUN apt-get update && apt-get upgrade -y && apt-get install -y less openjdk-7-jre-headless net-tools vim-tiny sudo openssh-server iputils-ping python2.7
+RUN apt-get install -y libgfortran3 python-numpy
 
 # Install Hadoop
 ADD hadoop_1.2.1-1_x86_64.deb /root/
