@@ -1,5 +1,5 @@
 # Spark
-FROM spark-base:1.0.0
+FROM commonera/spark-base:1.0.0
 
 # Expose TCP ports 7077 8080
 EXPOSE 7077 8080

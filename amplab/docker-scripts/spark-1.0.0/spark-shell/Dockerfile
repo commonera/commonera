@@ -1,5 +1,5 @@
 # Spark
-FROM spark-base:1.0.0
+FROM commonera/spark-base:1.0.0
 
 # Instead of using a random port, bind the worker to a specific port
 ENV SPARK_WORKER_PORT 8888
