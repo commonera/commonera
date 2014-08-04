@@ -9,7 +9,7 @@ CURDIR=$(pwd)
 BASEDIR=$(cd $(dirname $0); pwd)"/.."
 dir_list=( "dnsmasq-precise" "apache-hadoop-hdfs-precise" "spark-0.7.3" "shark-0.7.0" "spark-0.8.0" "spark-0.9.0" "shark-0.8.0" )
 
-export IMAGE_PREFIX=""
+export IMAGE_PREFIX="commonera/"
 #"amplab/"
 
 # NOTE: the order matters but this is the right one

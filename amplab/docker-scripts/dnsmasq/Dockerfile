@@ -1,6 +1,4 @@
-FROM ubuntu:precise
-
-MAINTAINER amplab amp-docker@eecs.berkeley.edu
+FROM ubuntu:utopic
 
 VOLUME [ "/etc/dnsmasq.d" ]
 
