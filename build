@@ -12,5 +12,5 @@ pkgs=$(find . -maxdepth 2 -name Dockerfile -printf "%h\n" | cut -c3-)
 
 for i in $(echo $preorder $pkgs); do
     echo $i;
-    (cd $i && docker build --rm -t commonera/$i:utopic . )
+    (cd $i && docker build --no-cache --rm -t commonera/$i:utopic . )
 done
