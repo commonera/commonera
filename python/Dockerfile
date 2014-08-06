@@ -11,3 +11,4 @@ RUN apt-get install -y \
     python-software-properties \
     software-properties-common \
     python-pip
+    python-lxml
