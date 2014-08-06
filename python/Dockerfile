@@ -12,3 +12,5 @@ RUN apt-get install -y \
     software-properties-common \
     python-pip
     python-lxml
+
+RUN pip install gspread
