@@ -1,10 +1,16 @@
+#!/bin/bash
+
+
+preorder=$(cat <<EOF
 proxy-cache
 buildpack-deps
 python
-python-stable
-python-dev
-ruby
-node
-elasticluster
-omics_pipe
-jupyter
+EOF
+)
+
+pkgs=$(find . -maxdepth 2 -name Dockerfile -printf "%h\n" | cut -c3-)
+
+for i in $(echo $preorder $pkgs); do
+    echo $i;
+    (cd $i && docker build --rm -t commonera/$i:utopic . )
+done
